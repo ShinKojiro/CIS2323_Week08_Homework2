@@ -7,7 +7,7 @@ public class Board{
     // private final int BOARD_SQUARES = 8;
     // private int b = 0;
     //private Boolean isFilled = false;
-    private Piece[][] board = new Piece[8][8];
+    private CheckersPiece[][] board = new CheckersPiece[8][8];
 
     public void setPiece(Piece a, int x, int y){
         // error if x or y are > 7
