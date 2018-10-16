@@ -11,7 +11,12 @@ public class Board{
 
     public void setPiece(CheckersPiece a, int x, int y){
         // error if x or y are > 7
-        board[x][y] = p;
+        try{
+            board[x][y] = p;
+        }
+        catch(Exception e){
+            System.out.println("An error occured");
+        }
     }
 
     public Boolean checkOccupied(int x, int y){
