@@ -4,8 +4,8 @@ public class Play {
 	public static void main(String[] args){
 			// Get out our board and pieces
 			Board board = new Board();
-			Piece r1 = new Piece();
-			Piece b1 = new Piece();
+			CheckersPiece r1 = new CheckersPiece();
+			CheckersPiece b1 = new CheckersPiece();
 			
 			// Setup board and pieces
 			r1.set(Color.RED);
