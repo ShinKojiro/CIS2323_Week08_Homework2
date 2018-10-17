@@ -5,7 +5,11 @@ public class Play {
 		// Get out our board and pieces
         Board board = new Board();
         Scanner inputDevice = new Scanner(System.in);
-        String playInput;
+        String pieceSelect;
+        int xSelect = 0;
+        int ySelect = 0;
+
+
         CheckersPiece r1 = new CheckersPiece();
         CheckersPiece r2 = new CheckersPiece();
         CheckersPiece r3 = new CheckersPiece();
@@ -92,6 +96,33 @@ public class Play {
         else{
             board.setPiece(r12, 5, 3);
             System.out.println("Piece successfully set");
+        }
+        System.out.print("What piece do you want to move? (You can enter b1 - b12 or r1 - r12: ");
+        try {
+            pieceSelect = inputDevice.nextLine();
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println("Please enter a proper piece identifier (b1 - b12 or r1- r12");
+        }
+        finally{
+            pieceSelect = "b1";
+        }
+        System.out.print("Please select the new x position: ");
+        try {
+            xSelect = inputDevice.nextInt();
+            xSelect = (xSelect - 1);
+        } catch (InputTypeMismatchException e) {
+            //TODO: handle exception
+            inputDevice.nextLine();
+            System.out.println("Please enter a number 1 through 8");
+        }
+        System.out.print("Please select the new y position: ");
+        try {
+            ySelect = inputDevice.nextInt();
+            ySelect = (ySelect - 1);
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println("Please enter a number 1 through 8");
         }
 		
 			// Check some stuff on the board
