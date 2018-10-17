@@ -4,8 +4,8 @@ public class CheckersPiece{
     private int id;
 
     public CheckersPiece(){
-        id = numOfPieces
-        numOfPieces++
+        id = numOfPieces;
+        numOfPieces++;
     }
     
     public void setColor(Color c){

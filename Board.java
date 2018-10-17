@@ -9,14 +9,14 @@ public class Board{
     //private Boolean isFilled = false;
     private CheckersPiece[][] board = new CheckersPiece[8][8];
 
-    public void setPiece(CheckersPiece a, int x, int y){
+    public void setPiece(CheckersPiece p, int x, int y){
         // error if x or y are > 7
-        try{
+        try {
             board[x][y] = p;
+        } catch (Exception e) {
+            //TODO: handle exception
         }
-        catch(Exception e){
-            System.out.println("An error occured");
-        }
+        
     }
 
     public Boolean checkOccupied(int x, int y){
