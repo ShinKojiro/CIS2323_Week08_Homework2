@@ -9,9 +9,15 @@ public class Board{
     //private Boolean isFilled = false;
     private CheckersPiece[][] board = new CheckersPiece[8][8];
 
-    public void setPiece(CheckersPiece p, int x, int y) throws MoveExeption{
+    public void setPiece(CheckersPiece p, int x, int y) {
         // error if x or y are > 7
-        board[x][y] = p;
+        // if (checkOccupied(x, y) == false){
+             board[x][y] = p;
+        // }
+        // else{
+        //     throw(new MoveExceptionHandle());
+        // }
+        
     }
 
     public void movePiece(){

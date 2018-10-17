@@ -5,7 +5,7 @@ public class Play {
 		// Get out our board and pieces
         Board board = new Board();
         Scanner inputDevice = new Scanner(System.in);
-        String pieceSelect;
+        CheckersPiece pieceSelect;
         int xSelect = 0;
         int ySelect = 0;
 
@@ -97,24 +97,28 @@ public class Play {
             board.setPiece(r12, 5, 3);
             System.out.println("Piece successfully set");
         }
+
+
         System.out.print("What piece do you want to move? (You can enter b1 - b12 or r1 - r12: ");
         try {
-            pieceSelect = inputDevice.nextLine();
+            //stuck here, and probably somewhere else
+            pieceSelect = inputDevice.next();
+            
         } catch (Exception e) {
             //TODO: handle exception
             System.out.println("Please enter a proper piece identifier (b1 - b12 or r1- r12");
         }
         finally{
-            pieceSelect = "b1";
+            pieceSelect = b1;
         }
         System.out.print("Please select the new x position: ");
         try {
             xSelect = inputDevice.nextInt();
             xSelect = (xSelect - 1);
-        } catch (InputTypeMismatchException e) {
+        } catch (Exception e) {
             //TODO: handle exception
             inputDevice.nextLine();
-            System.out.println("Please enter a number 1 through 8");
+            System.out.println("Error: Please enter a number 1 through 8");
         }
         System.out.print("Please select the new y position: ");
         try {
@@ -122,24 +126,27 @@ public class Play {
             ySelect = (ySelect - 1);
         } catch (Exception e) {
             //TODO: handle exception
-            System.out.println("Please enter a number 1 through 8");
+            System.out.println("Error: Please enter a number 1 through 8");
         }
+        board.setPiece(pieceSelect, xSelect, ySelect);
+        System.out.println("You now have a " + board.checkColor(xSelect, ySelect) + " piece at " + xSelect + " " + ySelect + "\n" +
+        "Occupy check: " + board.checkOccupied(xSelect, ySelect));
 		
 			// Check some stuff on the board
-        System.out.println("Location 2x2 is occupied: " + board.checkOccupied(2,2));
-        System.out.println("Location 3x2 is occupied: " + board.checkOccupied(3,2));
-        System.out.println("Location 1x3 is occupied: " + board.checkOccupied(1,3));
+        // System.out.println("Location 2x2 is occupied: " + board.checkOccupied(2,2));
+        // System.out.println("Location 3x2 is occupied: " + board.checkOccupied(3,2));
+        // System.out.println("Location 1x3 is occupied: " + board.checkOccupied(1,3));
             
-        try {
-            System.out.println("Location 8x7 is occupied: " + board.checkOccupied(8,7));
-        } catch (ArrayIndexOutOfBoundsException e) {
-            // TODO: handle exception
-            System.out.println("8x7 is out of bounds");
-        }
-        System.out.println("Color of the piece at 7x7 is: " + board.checkColor(7,7));
-        System.out.println("Location 1x4 is occupied: " + board.checkOccupied(1,4));
-        System.out.println("Location 2x4 is occupied: " + board.checkOccupied(2,4));
-        System.out.println("Location 7x7 is occupied: " + board.checkOccupied(7,7));
+        // try {
+        //     System.out.println("Location 8x7 is occupied: " + board.checkOccupied(8,7));
+        // } catch (ArrayIndexOutOfBoundsException e) {
+        //     // TODO: handle exception
+        //     System.out.println("8x7 is out of bounds");
+        // }
+        // System.out.println("Color of the piece at 7x7 is: " + board.checkColor(7,7));
+        // System.out.println("Location 1x4 is occupied: " + board.checkOccupied(1,4));
+        // System.out.println("Location 2x4 is occupied: " + board.checkOccupied(2,4));
+        // System.out.println("Location 7x7 is occupied: " + board.checkOccupied(7,7));
 
         // if(board.checkColor(x, y))
         // playInput = nextInt();
