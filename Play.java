@@ -3,7 +3,9 @@ import java.util.*;
 public class Play {
 	public static void main(String[] args){
 		// Get out our board and pieces
-		Board board = new Board();
+        Board board = new Board();
+        Scanner inputDevice = new Scanner(System.in);
+        String playInput;
         CheckersPiece r1 = new CheckersPiece();
         CheckersPiece r2 = new CheckersPiece();
         CheckersPiece r3 = new CheckersPiece();
@@ -81,7 +83,16 @@ public class Play {
         board.setPiece(r9,5,7);
         board.setPiece(r10,5,5);
         board.setPiece(r11,5,3);
-        board.setPiece(r12,5,3);
+        board.setPiece(r12,5,1);
+        
+        
+        if(board.checkOccupied(5,3) == true){
+            System.out.println("Space is occupied");
+        }
+        else{
+            board.setPiece(r12, 5, 3);
+            System.out.println("Piece successfully set");
+        }
 		
 			// Check some stuff on the board
         System.out.println("Location 2x2 is occupied: " + board.checkOccupied(2,2));
@@ -91,12 +102,16 @@ public class Play {
         try {
             System.out.println("Location 8x7 is occupied: " + board.checkOccupied(8,7));
         } catch (ArrayIndexOutOfBoundsException e) {
-            //TODO: handle exception
+            // TODO: handle exception
             System.out.println("8x7 is out of bounds");
         }
         System.out.println("Color of the piece at 7x7 is: " + board.checkColor(7,7));
         System.out.println("Location 1x4 is occupied: " + board.checkOccupied(1,4));
         System.out.println("Location 2x4 is occupied: " + board.checkOccupied(2,4));
         System.out.println("Location 7x7 is occupied: " + board.checkOccupied(7,7));
+
+        // if(board.checkColor(x, y))
+        // playInput = nextInt();
+        // board.movePiece(playInput, x, y);
     }
 }

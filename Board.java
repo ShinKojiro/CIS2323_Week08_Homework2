@@ -11,11 +11,10 @@ public class Board{
 
     public void setPiece(CheckersPiece p, int x, int y){
         // error if x or y are > 7
-        try {
-            board[x][y] = p;
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
+        board[x][y] = p;
+    }
+
+    public void movePiece(){
         
     }
 
