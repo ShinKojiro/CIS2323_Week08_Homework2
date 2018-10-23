@@ -90,40 +90,32 @@ public class Play {
 
         board.setPiece(rPieces[0],0,0);
         board.setPiece(rPieces[1],0,2);
-        // board.setPiece(b3,0,4);
-        // board.setPiece(b4,0,6);
-        // board.setPiece(b5,1,1);
-        // board.setPiece(b6,1,3);
-        // board.setPiece(b7,1,5);
-        // board.setPiece(b8,1,7);
-        // board.setPiece(b9,2,0);
-        // board.setPiece(b10,2,2);
-        // board.setPiece(b11,2,4);
-        // board.setPiece(b12,2,6);
+        board.setPiece(rPieces[2],0,4);
+        board.setPiece(rPieces[3],0,6);
+        board.setPiece(rPieces[4],1,1);
+        board.setPiece(rPieces[5],1,3);
+        board.setPiece(rPieces[6],1,5);
+        board.setPiece(rPieces[7],1,7);
+        board.setPiece(rPieces[8],2,0);
+        board.setPiece(rPieces[9],2,2);
+        board.setPiece(rPieces[10],2,4);
+        board.setPiece(rPieces[11],2,6);
 
-        // board.setPiece(r1,7,7);
-        // board.setPiece(r2,7,5);
-        // board.setPiece(r3,7,3);
-        // board.setPiece(r4,7,1);
-        // board.setPiece(r5,6,6);
-        // board.setPiece(r6,6,4);
-        // board.setPiece(r7,6,2);
-        // board.setPiece(r8,6,0);
-        // board.setPiece(r9,5,7);
-        // board.setPiece(r10,5,5);
-        // board.setPiece(r11,5,3);
-        // board.setPiece(r12,5,1);
+        board.setPiece(bPieces[0],7,7);
+        board.setPiece(bPieces[1],7,5);
+        board.setPiece(bPieces[2],7,3);
+        board.setPiece(bPieces[3],7,1);
+        board.setPiece(bPieces[4],6,6);
+        board.setPiece(bPieces[5],6,4);
+        board.setPiece(bPieces[6],6,2);
+        board.setPiece(bPieces[7],6,0);
+        board.setPiece(bPieces[8],5,7);
+        board.setPiece(bPieces[9],5,5);
+        board.setPiece(bPieces[10],5,3);
+        board.setPiece(bPieces[11],5,1);
         
         
-        if(board.checkOccupied(0,0) == true){
-            System.out.println("Space is occupied");
-        }
-        else{
-            board.setPiece(rPieces[0], 0, 0);
-            System.out.println("Piece successfully set");
-        }
-
-
+        
         System.out.print("What piece do you want to move? (You can enter 1 - 12: ");
         try {
             //stuck here, and probably somewhere else
@@ -154,9 +146,26 @@ public class Play {
             //TODO: handle exception
             System.out.println("Error: Please enter a number 1 through 8");
         }
-        board.setPiece(rPieces[pieceSelect], xSelect, ySelect);
-        System.out.println("You now have a " + board.checkColor(xSelect, ySelect) + " piece at " + xSelect + " " + ySelect + "\n" +
-        "Occupy check: " + board.checkOccupied(xSelect, ySelect));
+        // if(board.checkOccupied(xSelect, ySelect) == true){
+        //     System.out.println("Space is occupied");
+        // }
+        // else{
+        //     board.setPiece(rPieces[pieceSelect], xSelect, ySelect);
+        //     System.out.println("You now have a " + board.checkColor(xSelect, ySelect) + " piece at " + (xSelect + 1) + " " + (ySelect + 1) + "\n" +
+        //     "Occupy check: " + board.checkOccupied(xSelect, ySelect));
+        //     System.out.println("Piece successfully set");
+        // }
+        try {
+            board.setPiece(rPieces[pieceSelect], xSelect, ySelect);
+            System.out.println("You now have a " + board.checkColor(xSelect, ySelect) + " piece at " + (xSelect + 1) + " " + (ySelect + 1) + "\n" +
+            "Occupy check: " + board.checkOccupied(xSelect, ySelect));
+        } catch (MoveException e) {
+            //TODO: handle exception
+            
+        }
+        
+
+        
 		
 			// Check some stuff on the board
         // System.out.println("Location 2x2 is occupied: " + board.checkOccupied(2,2));

@@ -9,14 +9,14 @@ public class Board{
     //private Boolean isFilled = false;
     private CheckersPiece[][] board = new CheckersPiece[8][8];
 
-    public void setPiece(CheckersPiece p, int x, int y) {
+    public void setPiece(CheckersPiece p, int x, int y) throws MoveException{
         // error if x or y are > 7
-        // if (checkOccupied(x, y) == false){
+        if (checkOccupied(x, y) == false){
              board[x][y] = p;
-        // }
-        // else{
-        //     throw(new MoveExceptionHandle());
-        // }
+        }
+        else{
+            throw(new MoveException());
+        }
         
     }
 
