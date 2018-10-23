@@ -5,114 +5,138 @@ public class Play {
 		// Get out our board and pieces
         Board board = new Board();
         Scanner inputDevice = new Scanner(System.in);
-        CheckersPiece pieceSelect;
+        int pieceSelect = 0;
+        int pieceId;
         int xSelect = 0;
         int ySelect = 0;
+        final int PIECES_PER_PLAYER = 12;
 
-        CheckersPiece[] rPieces = new CheckersPiece[12];
-        CheckersPiece[] bPieces = new CheckersPiece[12];
+        CheckersPiece[] rPieces = new CheckersPiece[PIECES_PER_PLAYER];
+        CheckersPiece[] bPieces = new CheckersPiece[PIECES_PER_PLAYER];
 
-        CheckersPiece r1 = new CheckersPiece();
-        CheckersPiece r2 = new CheckersPiece();
-        CheckersPiece r3 = new CheckersPiece();
-        CheckersPiece r4 = new CheckersPiece();
-        CheckersPiece r5 = new CheckersPiece();
-        CheckersPiece r6 = new CheckersPiece();
-        CheckersPiece r7 = new CheckersPiece();
-        CheckersPiece r8 = new CheckersPiece();
-        CheckersPiece r9 = new CheckersPiece();
-        CheckersPiece r10 = new CheckersPiece();
-        CheckersPiece r11 = new CheckersPiece();
-        CheckersPiece r12 = new CheckersPiece();
+        int i = 0;
+        while(i < PIECES_PER_PLAYER){
+            rPieces[i] = new CheckersPiece();
+            bPieces[i] = new CheckersPiece();
+            rPieces[i].setColor(Color.RED);
+            bPieces[i].setColor(Color.BLACK);
+            rPieces[i].setPieceNumber(i);
+            bPieces[i].setPieceNumber(i);
+            // rPieces[i].setPosition((x + 1) , y1);
+            // bPieces[i].setPosition((x + 1) , y2);
+            i++;
+        }
+        for(int j = 0; j < PIECES_PER_PLAYER; j++){
 
-        CheckersPiece b1 = new CheckersPiece();
-        CheckersPiece b2 = new CheckersPiece();
-        CheckersPiece b3 = new CheckersPiece();
-        CheckersPiece b4 = new CheckersPiece();
-        CheckersPiece b5 = new CheckersPiece();
-        CheckersPiece b6 = new CheckersPiece();
-        CheckersPiece b7 = new CheckersPiece();
-        CheckersPiece b8 = new CheckersPiece();
-        CheckersPiece b9 = new CheckersPiece();
-        CheckersPiece b10 = new CheckersPiece();
-        CheckersPiece b11 = new CheckersPiece();
-        CheckersPiece b12 = new CheckersPiece();
+            System.out.println(rPieces[j].printInfo());
+        }
+        for(int j = 0; j < PIECES_PER_PLAYER; j++){
+            
+            System.out.println(bPieces[j].printInfo());
+        }
+        
+        // CheckersPiece r1 = new CheckersPiece();
+        // CheckersPiece r2 = new CheckersPiece();
+        // CheckersPiece r3 = new CheckersPiece();
+        // CheckersPiece r4 = new CheckersPiece();
+        // CheckersPiece r5 = new CheckersPiece();
+        // CheckersPiece r6 = new CheckersPiece();
+        // CheckersPiece r7 = new CheckersPiece();
+        // CheckersPiece r8 = new CheckersPiece();
+        // CheckersPiece r9 = new CheckersPiece();
+        // CheckersPiece r10 = new CheckersPiece();
+        // CheckersPiece r11 = new CheckersPiece();
+        // CheckersPiece r12 = new CheckersPiece();
+
+        // CheckersPiece b1 = new CheckersPiece();
+        // CheckersPiece b2 = new CheckersPiece();
+        // CheckersPiece b3 = new CheckersPiece();
+        // CheckersPiece b4 = new CheckersPiece();
+        // CheckersPiece b5 = new CheckersPiece();
+        // CheckersPiece b6 = new CheckersPiece();
+        // CheckersPiece b7 = new CheckersPiece();
+        // CheckersPiece b8 = new CheckersPiece();
+        // CheckersPiece b9 = new CheckersPiece();
+        // CheckersPiece b10 = new CheckersPiece();
+        // CheckersPiece b11 = new CheckersPiece();
+        // CheckersPiece b12 = new CheckersPiece();
 			
 			// Setup board and pieces
-        r1.setColor(Color.RED);
-        r2.setColor(Color.RED);
-        r3.setColor(Color.RED);
-        r4.setColor(Color.RED);
-        r5.setColor(Color.RED);
-        r6.setColor(Color.RED);
-        r7.setColor(Color.RED);
-        r8.setColor(Color.RED);
-        r9.setColor(Color.RED);
-        r10.setColor(Color.RED);
-        r11.setColor(Color.RED);
-        r12.setColor(Color.RED);
+        // r1.setColor(Color.RED);
+        // r2.setColor(Color.RED);
+        // r3.setColor(Color.RED);
+        // r4.setColor(Color.RED);
+        // r5.setColor(Color.RED);
+        // r6.setColor(Color.RED);
+        // r7.setColor(Color.RED);
+        // r8.setColor(Color.RED);
+        // r9.setColor(Color.RED);
+        // r10.setColor(Color.RED);
+        // r11.setColor(Color.RED);
+        // r12.setColor(Color.RED);
 
-        b1.setColor(Color.BLACK);
-        b2.setColor(Color.BLACK);
-        b3.setColor(Color.BLACK);
-        b4.setColor(Color.BLACK);
-        b5.setColor(Color.BLACK);
-        b6.setColor(Color.BLACK);
-        b7.setColor(Color.BLACK);
-        b8.setColor(Color.BLACK);
-        b9.setColor(Color.BLACK);
-        b10.setColor(Color.BLACK);
-        b11.setColor(Color.BLACK);
-        b12.setColor(Color.BLACK);
+        // b1.setColor(Color.BLACK);
+        // b2.setColor(Color.BLACK);
+        // b3.setColor(Color.BLACK);
+        // b4.setColor(Color.BLACK);
+        // b5.setColor(Color.BLACK);
+        // b6.setColor(Color.BLACK);
+        // b7.setColor(Color.BLACK);
+        // b8.setColor(Color.BLACK);
+        // b9.setColor(Color.BLACK);
+        // b10.setColor(Color.BLACK);
+        // b11.setColor(Color.BLACK);
+        // b12.setColor(Color.BLACK);
 
-        board.setPiece(b1,0,0);
-        board.setPiece(b2,0,2);
-        board.setPiece(b3,0,4);
-        board.setPiece(b4,0,6);
-        board.setPiece(b5,1,1);
-        board.setPiece(b6,1,3);
-        board.setPiece(b7,1,5);
-        board.setPiece(b8,1,7);
-        board.setPiece(b9,2,0);
-        board.setPiece(b10,2,2);
-        board.setPiece(b11,2,4);
-        board.setPiece(b12,2,6);
+        board.setPiece(rPieces[0],0,0);
+        board.setPiece(rPieces[1],0,2);
+        // board.setPiece(b3,0,4);
+        // board.setPiece(b4,0,6);
+        // board.setPiece(b5,1,1);
+        // board.setPiece(b6,1,3);
+        // board.setPiece(b7,1,5);
+        // board.setPiece(b8,1,7);
+        // board.setPiece(b9,2,0);
+        // board.setPiece(b10,2,2);
+        // board.setPiece(b11,2,4);
+        // board.setPiece(b12,2,6);
 
-        board.setPiece(r1,7,7);
-        board.setPiece(r2,7,5);
-        board.setPiece(r3,7,3);
-        board.setPiece(r4,7,1);
-        board.setPiece(r5,6,6);
-        board.setPiece(r6,6,4);
-        board.setPiece(r7,6,2);
-        board.setPiece(r8,6,0);
-        board.setPiece(r9,5,7);
-        board.setPiece(r10,5,5);
-        board.setPiece(r11,5,3);
-        board.setPiece(r12,5,1);
+        // board.setPiece(r1,7,7);
+        // board.setPiece(r2,7,5);
+        // board.setPiece(r3,7,3);
+        // board.setPiece(r4,7,1);
+        // board.setPiece(r5,6,6);
+        // board.setPiece(r6,6,4);
+        // board.setPiece(r7,6,2);
+        // board.setPiece(r8,6,0);
+        // board.setPiece(r9,5,7);
+        // board.setPiece(r10,5,5);
+        // board.setPiece(r11,5,3);
+        // board.setPiece(r12,5,1);
         
         
-        if(board.checkOccupied(5,3) == true){
+        if(board.checkOccupied(0,0) == true){
             System.out.println("Space is occupied");
         }
         else{
-            board.setPiece(r12, 5, 3);
+            board.setPiece(rPieces[0], 0, 0);
             System.out.println("Piece successfully set");
         }
 
 
-        System.out.print("What piece do you want to move? (You can enter b1 - b12 or r1 - r12: ");
+        System.out.print("What piece do you want to move? (You can enter 1 - 12: ");
         try {
             //stuck here, and probably somewhere else
-            pieceSelect = inputDevice.next();
-            
+            pieceSelect = inputDevice.nextInt();
+            inputDevice.nextLine();
+          
         } catch (Exception e) {
             //TODO: handle exception
             System.out.println("Please enter a proper piece identifier (b1 - b12 or r1- r12");
         }
-        finally{
-            pieceSelect = b1;
-        }
+        // finally{
+        //     pieceSelect = rPieces[0];
+        // }
         System.out.print("Please select the new x position: ");
         try {
             xSelect = inputDevice.nextInt();
@@ -130,7 +154,7 @@ public class Play {
             //TODO: handle exception
             System.out.println("Error: Please enter a number 1 through 8");
         }
-        board.setPiece(pieceSelect, xSelect, ySelect);
+        board.setPiece(rPieces[pieceSelect], xSelect, ySelect);
         System.out.println("You now have a " + board.checkColor(xSelect, ySelect) + " piece at " + xSelect + " " + ySelect + "\n" +
         "Occupy check: " + board.checkOccupied(xSelect, ySelect));
 		

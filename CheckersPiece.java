@@ -2,10 +2,20 @@ public class CheckersPiece{
     private static int numOfPieces;
     private Color color;
     private int id;
+    private int pieceNumber;
 
     public CheckersPiece(){
         id = numOfPieces;
         numOfPieces++;
+    }
+
+    public void setPieceNumber(int nb){
+        pieceNumber = nb;
+    }
+
+    public int getPieceNumber(){
+        return pieceNumber;
+        
     }
     
     public void setColor(Color c){
@@ -16,7 +26,9 @@ public class CheckersPiece{
         return color;
     }
     
-    
+    public String printInfo(){
+        return "Placing " + getColor() + " " + getPieceNumber();
+    }
     // private Color color;
     // // private int vPos;
     // // private int hPos;

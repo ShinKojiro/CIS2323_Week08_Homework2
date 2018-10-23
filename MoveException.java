@@ -1,6 +1,6 @@
 public class MoveException extends Exception{
     public MoveException(){
-        super("You Cant Do that");
+        super("There is already a piece there. Select a different piece or position.");
     }
     
 }
