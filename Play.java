@@ -9,6 +9,8 @@ public class Play {
         int xSelect = 0;
         int ySelect = 0;
 
+        CheckersPiece[] rPieces = new CheckersPiece[12];
+        CheckersPiece[] bPieces = new CheckersPiece[12];
 
         CheckersPiece r1 = new CheckersPiece();
         CheckersPiece r2 = new CheckersPiece();
