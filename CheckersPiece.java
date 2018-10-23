@@ -26,9 +26,9 @@ public class CheckersPiece{
         return color;
     }
     
-    public String printInfo(){
-        return "Placing " + getColor() + " " + getPieceNumber();
-    }
+    // public String printInfo(){
+    //     return "Placing " + getColor() + " " + getPieceNumber();
+    // }
     // private Color color;
     // // private int vPos;
     // // private int hPos;

@@ -1,6 +1,14 @@
 public class MoveException extends Exception{
     public MoveException(){
-        super("There is already a piece there. Select a different piece or position.");
+        super();
     }
-    
+    public MoveException(String message, Throwable cause){
+        super(message,cause);
+    }
+    public MoveException(Throwable cause){
+        super(cause);
+    }
+    public MoveException(String message){
+        super(message);
+    }
 }

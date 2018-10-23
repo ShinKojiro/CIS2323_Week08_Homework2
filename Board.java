@@ -20,9 +20,9 @@ public class Board{
         
     }
 
-    public void movePiece(){
+    // public void movePiece(CheckersPiece p, int x, int y) throws MoveException{
         
-    }
+    // }
 
     public Boolean checkOccupied(int x, int y){
         return (board[x][y] != null);
